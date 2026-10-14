@@ -1,6 +1,9 @@
-#Bitmap-Generator
+# Bitmap Generator
 
-Bitmap Generator for I2C OLED is a lightweight, web-based tool designed to effortlessly convert images into optimized code for microcontrollers like Arduino, ESP8266, and ESP32. Featuring a real-time $128 \times 64$ monochrome live preview, it allows users to convert color or black-and-white graphics into ready-to-use bitmap arrays and display logic tailored specifically for 0.96" SSD1306 I2C OLED displays.
+Bitmap generator is a open source project. its made for turning your photos into black and white bitmap. The bitmaps can use in Arduino, Esp8266 or Esp32. It usually use the standard 0.96" Oled for showing the images. You can check how it will look in oled from preview. The project also uses some open source projects guide for making to more better with more knowledge.
+
+Here is a link for check it out,
+
 
 Live Preview : https://tanzil-alam.github.io/Bitmap-Generator/
 
