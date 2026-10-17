@@ -7,6 +7,8 @@ Here is a link for check it out,
 
 Live Preview : https://tanzil-alam.github.io/Bitmap-Generator/
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d427c745-0b24-4422-a753-a6a55874e536" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b192854b-8d2e-475f-aef7-b202ad24328c" />
+
 
 
