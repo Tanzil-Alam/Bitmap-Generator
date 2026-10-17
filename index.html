@@ -13,80 +13,64 @@
 </head>
 
 <body>
-   <div id="rating-popup"
-    style="position: fixed; bottom: 20px; right: 20px; background: #ffffff; color: #333333; padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 15px; font-family: sans-serif; z-index: 9999; border: 1px solid #eee;">
-    <span>Please Rate / Vote me good, It was very hard to build.</span>
-    <button onclick="document.getElementById('rating-popup').remove()"
-      style="background: none; border: none; font-size: 18px; cursor: pointer; color: #888888; line-height: 1;">&times;</button>
-  </div>
+  </section>
 
-  <main class="app-shell">
-    <section class="intro" aria-labelledby="page-title">
-      <H1>Show your image in Oled</H1>
+  <section class="workspace" aria-label="Bitmap generator">
+    <section class="card upload-card" aria-labelledby="upload-title">
+      <div class="card-heading">
+        <div>
+        </div>
+      </div>
+
+      <input type="file" id="file-input" accept="image/*">
+      <label class="file-picker" for="file-input">
+        <span class="upload-icon" aria-hidden="true">↑</span>
+        <span class="file-picker-copy">
+          <strong>Choose what you want to show</strong>
+        </span>
+        <span class="browse-button">Choose file</span>
+      </label>
+      <p id="selected-file" class="selected-file" aria-live="polite">No image selected</p>
+      <p id="only-images-file-error" class="message error" role="alert"></p>
     </section>
 
-    <section class="workspace" aria-label="Bitmap generator">
-      <section class="card upload-card" aria-labelledby="upload-title">
-        <div class="card-heading">
-          <div>
-          </div>
+    <aside class="card preview-card" aria-labelledby="preview-title">
+      <div class="preview-heading">
+      </div>
+      <div class="preview-frame">
+        <div id="preview-placeholder" class="preview-placeholder">
         </div>
+        <div id="images-canvas-container" class="preview-canvas-container"></div>
+      </div>
+    </aside>
 
-        <input type="file" id="file-input" accept="image/*">
-        <label class="file-picker" for="file-input">
-          <span class="upload-icon" aria-hidden="true">↑</span>
-          <span class="file-picker-copy">
-            <strong>Choose what you want to show</strong>
-            <span>It accepts colorfull image and convert to black and white, but try to give black and white image if
-              you can</span>
-          </span>
-          <span class="browse-button">Choose file</span>
-        </label>
-        <p id="selected-file" class="selected-file" aria-live="polite">No image selected</p>
-        <p id="only-images-file-error" class="message error" role="alert"></p>
-      </section>
-
-      <aside class="card preview-card" aria-labelledby="preview-title">
-        <div class="preview-heading">
-          <div>
-            <p class="eyebrow">Live preview</p>
-            <h2 id="preview-title">128 x 64</h2>
-          </div>
+    <section class="card output-card" aria-labelledby="output-title">
+      <div class="card-heading">
+        <div>
+          <h2 id="output-title">Generate Arduino code</h2>
         </div>
-        <div class="preview-frame">
-          <div id="preview-placeholder" class="preview-placeholder">
-          </div>
-          <div id="images-canvas-container" class="preview-canvas-container"></div>
-        </div>
-      </aside>
+      </div>
 
-      <section class="card output-card" aria-labelledby="output-title">
-        <div class="card-heading">
-          <div>
-            <h2 id="output-title">Generate Arduino code</h2>
-          </div>
+      <div class="output-actions">
+        <button type="button" id="generate-button" class="button button-primary" disabled>
+          Generate code
+        </button>
+        <button type="button" id="copy-button" class="button button-secondary" disabled>
+          <span aria-hidden="true">▢</span> Copy code
+        </button>
+        <div class="format-buttons" role="group" aria-label="Code format">
+          <button type="button" class="format-button is-selected" data-format="arduino"
+            aria-pressed="true">Arduino</button>
+          <button type="button" class="format-button" data-format="esp8266" aria-pressed="false">Esp8266</button>
+          <button type="button" class="format-button" data-format="esp32" aria-pressed="false">Esp32</button>
         </div>
+      </div>
 
-        <div class="output-actions">
-          <button type="button" id="generate-button" class="button button-primary" disabled>
-            Generate code
-          </button>
-          <button type="button" id="copy-button" class="button button-secondary" disabled>
-            <span aria-hidden="true">▢</span> Copy code
-          </button>
-          <div class="format-buttons" role="group" aria-label="Code format">
-            <button type="button" class="format-button is-selected" data-format="arduino"
-              aria-pressed="true">Arduino</button>
-            <button type="button" class="format-button" data-format="esp8266" aria-pressed="false">Esp8266</button>
-            <button type="button" class="format-button" data-format="esp32" aria-pressed="false">Esp32</button>
-          </div>
-        </div>
-
-        <textarea id="code-output" class="code-output" aria-label="Generated Arduino code" spellcheck="false"
-          readonly></textarea>
-        <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
-      </section>
-  </main>
+      <textarea id="code-output" class="code-output" aria-label="Generated Arduino code" spellcheck="false"
+        readonly></textarea>
+      <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+    </section>
+    </main>
 </body>
 
 </html
